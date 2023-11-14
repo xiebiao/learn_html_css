@@ -24,6 +24,9 @@
 
 .header {
   background-color: #b2d6ff;
+  height: auto;
+  justify-content: inherit;
+  align-items: inherit;
 }
 
 .content {
@@ -52,7 +55,10 @@
 .feature-3 {
   background-color: #c8c6fa;
 }
-
+.photo img {
+  width: 100%;
+  display: block;
+}
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
