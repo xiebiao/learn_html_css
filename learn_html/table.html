@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <style>
+      table,th,td {border: 1px solid;}
+      table {
+        table-layout: fixed;
+        caption-side: bottom;
+        text-align: right;
+        border-collapse: collapse;/** inherit:XXX,separate:XX, collapse: **/
+        border-spacing: 5px 10px;
+        empty-cells: hide;/** 隐藏空数据格 **/
+      }
+      td:empty,th:empty {
+        visibility: collapse;
+      }
+      td {
+        border: 1px solid;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      caption {
+        text-transform: uppercase;
+        color: #CC0000;
+      }
+      col.name {
+        width: 10em;
+      }
+      col.age {
+      }
+      col.position {
+        width: 1em;
+      }
+      th {
+        text-align: left;
+      }
+      tbody {
+       vertical-align: top;
+      }
+    </style>
+
+  </head>
+  <body>
+    <table>
+      <caption>Table Caption</caption>
+      <colgroup>
+        <col class="name"/>
+        <col class="age"/>
+        <col class="position"/>
+      </colgroup>
+      <thead>
+        <tr>
+        <th>#Name</th>
+        <th>#Age</th>
+        <th>#Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bill</td>
+          <td>30</td>
+          <td>成华区万科魅力之城</td>
+        </tr>
+        <tr>
+          <td>Cindy</td>
+          <td>3</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+        <th>#Name</th>
+        <th>#Age</th>
+        <th>#Position</th>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

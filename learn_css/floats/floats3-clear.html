@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Floats3-clear</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .float-left {
+        float: left;
+        width: 300px;
+        background-color: rgb(198, 198, 231);
+      }
+      .float-rigt {
+        float: right;
+        width: 300px;
+        height: 100px;
+        background-color: rgb(238, 185, 28);
+      }
+      .clear-float {
+        clear: left; /*紧跟在前面第一个左浮动的元素下
+        面*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="float-left">Div 1</div>
+      <div class="float-rigt">Div 2</div>
+
+      <p class="clear-float">
+        我想这个段落文字放在前面DIV的后面，即使他们处于浮动中.
+      </p>
+    </div>
+  </body>
+</html>

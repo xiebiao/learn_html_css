@@ -1,0 +1,104 @@
+/* 自定义类，应用于特例中*/
+.synopsis {
+  color: #7e8184; /* Light gray */
+  font-style: italic;
+}
+/* 
+伪类在使用上应该对全局信息呈现考虑，因为它更通用，影响范围较大。
+这里和 自定义类 synopsis效果一样
+*/
+p:first-of-type {
+  color: #7e8184;
+  font-style: italic;
+}
+
+.synopsis em {
+  font-style: normal;
+}
+
+.button {
+  color: #fff;
+  background-color: #5995da; /* Blue */
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5d6063; /* Dark gray */
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 20px auto;
+}
+
+.call-to-action {
+  font-style: italic;
+  background-color: #eeb75a; /* Yellow */
+}
+.page {
+  width: 600px;
+  margin: 0 auto;
+}
+
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: aqua;
+  text-decoration: underline;
+}
+a:active {
+  color: red;
+}
+
+.button:link,                 /* Change this */
+.button:visited {
+  /* Change this */
+  display: block; /* Add this */
+  text-decoration: none; /* Add this */
+
+  color: #fff; /* The rest is the same */
+  background-color: #5995da;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5d6063;
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 20px auto;
+}
+
+.button:hover,
+.button:visited:hover {
+  color: #d53838;
+  background-color: #76aeed; /* Light blue */
+}
+
+.button:active,
+.button:visited:active {
+  color: #fff;
+  background-color: #5995da; /* Blue */
+}
+
+.call-to-action:link,
+.call-to-action:visited {
+  font-style: italic;
+  background-color: #eeb75a; /* Yellow */
+}
+
+.call-to-action:hover,
+.call-to-action:visited:hover {
+  background-color: #f5cf8e; /* Light yellow */
+}
+
+.call-to-action:active,
+.call-to-action:visited:active {
+  background-color: #eeb75a; /* Yellow */
+}
+p:last-of-type {
+  margin-bottom: 50px;
+}

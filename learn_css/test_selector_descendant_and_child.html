@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+    /** section内所有h2元素 **/
+    section h2{
+      color:red;
+    }
+    /** section的直接子元素**/
+    section > h2{
+      color:blue;
+    }
+</style>
+  </head>
+  <body>
+    <section>
+      <h2>This is h2 of section</h2>
+      <article>
+        <h2>This is h2 of article</h2>
+      </article>
+
+      <h2>This is h2 of section</h2>
+    </section>
+  </body>
+</html>
