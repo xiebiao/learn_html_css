@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test selectors</title>
+    <style>
+      :root {
+        background-color: rgb(227, 224, 224);
+      }
+
+      /*优先级
+      * 元素 < 类 < 元素.类 < id
+      */
+      .info {
+        color: rgb(245, 220, 220);
+        font-size: 2rem;
+      }
+      p {
+        color: rgb(201, 122, 5);
+      }
+      p.info {
+        color: rgb(245, 36, 36);
+      }
+      #info {
+        color: green;
+      }
+      div > p {
+        /*div元素下直接孩子元素p*/
+        background-color: beige;
+      }
+      div p {
+        /*div 元素下所有p元素*/
+        background-color: aqua;
+      }
+      div p span {
+        color: blue;
+      }
+      div + p {
+        /*与div元素同级后的第一个元素*/
+        background-color: red;
+      }
+      div ~ p {
+        /*与div元素同级后的所有元素*/
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>title h1</h1>
+      <p>this p is brother of div</p>
+      <div>
+        <p>this p is first child of div</p>
+        <div>
+          <p>this p is of div</p>
+          <section><p>this p is child of section</p></section>
+          <div>
+            <p><span>span</span></p>
+          </div>
+        </div>
+      </div>
+      <p>this p is brother of div</p>
+      <p>this p is brother of div</p>
+    </section>
+    <section>
+      <p id="info" class="info">info</p>
+      <p class="other">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, incidunt.
+      </p>
+    </section>
+  </body>
+</html>

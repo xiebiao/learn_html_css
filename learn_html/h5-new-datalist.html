@@ -1,0 +1,164 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Datalist</title>
+    <!-- datalist 样式控制：-->
+    <!-- https://codepen.io/iamsidd_j/pen/qBRWNQQ?editors=0010 -->
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      fieldset {
+        border: 1px solid blue;
+        width: 360px;
+        border-radius: 5px;
+      }
+
+      legend,
+      label {
+        color: blue;
+        font-size: 24px;
+        font-family: sans-serif;
+      }
+
+      input {
+        font-size: 18px;
+        padding: 5px;
+        height: 35px;
+        width: 350px;
+        border: 1px solid blue;
+        outline: none;
+        border-radius: 5px;
+        color: blue;
+        /*   border-bottom: none; */
+      }
+      datalist {
+        position: absolute;
+        background-color: white;
+        border-bottom: 1px solid blue;
+        border-radius: 0 0 5px 5px;
+        border-top: none;
+        font-family: sans-serif;
+        width: 350px;
+        /* padding: 5px; */
+        max-height: 10rem;
+        overflow-y: auto;
+      }
+
+      option {
+        background-color: white;
+        padding: 8px;
+        color: blue;
+
+        font-size: 18px;
+        cursor: pointer;
+        border-left: 1px solid blue;
+        border-right: 1px solid blue;
+      }
+
+      option:hover,
+      .active {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Datalist Form</legend>
+      <label>Select Browser</label>
+      <input
+        autocomplete="off"
+        role="combobox"
+        list=""
+        id="input"
+        name="browsers"
+        placeholder="Select your fav browser"
+      />
+      <!-- list属性值要设置为空，隐藏浏览器默认的下拉图标，已经下拉选项值，再通过js来实现 -->
+      <!-- Its important that you keep list attribute empty to hide the default dropdown icon and the browser's default datalist -->
+
+      <datalist id="browsers" role="listbox">
+        <option value="Internet Explorer">Internet Explorer</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Safari">Safari</option>
+        <option value="Microsoft Edge">Microsoft Edge</option>
+        <option value="Firefox">Firefox</option>
+      </datalist>
+      <!-- TIPS： datalist与select的区别：使用select用户则必须从提供的选项中选择，datalist则不强制用户从选项中选择，也可以手动输入 -->
+
+      <!--     <br>
+    <br>
+    <label for="pwd"> Password </label>
+    <input id="pwd" type="password">
+     -->
+    </fieldset>
+    <script>
+      input.onfocus = function () {
+     
+        if (input.value != "") {
+          input.style.borderRadius = "5px ";
+          browsers.style.display = "none";
+        } else {
+          browsers.style.display = "block";
+          input.style.borderRadius = "5px 5px 0 0";
+        }
+      };
+      for (let option of browsers.options) {
+        option.onclick = function () {
+          input.value = option.value;
+          browsers.style.display = "none";
+          input.style.borderRadius = "5px";
+        };
+      }
+
+      input.oninput = function () {
+        currentFocus = -1;
+        var text = input.value.toUpperCase();
+        for (let option of browsers.options) {
+          if (option.value.toUpperCase().indexOf(text) > -1) {
+            option.style.display = "block";
+          } else {
+            input.style.borderRadius = "5px";
+            browsers.style.display = "none";
+            option.style.display = "none";
+          }
+        }
+      };
+      //   input.onblur = function (e) {
+      //     browsers.style.display = "none";
+      //     for (let option of browsers.options) {
+      //       option.style.display = "none";
+      //     }
+      //   };
+      var currentFocus = -1;
+      input.onkeydown = function (e) {
+        if (e.keyCode == 40) {
+          currentFocus++;
+          addActive(browsers.options);
+        } else if (e.keyCode == 38) {
+          currentFocus--;
+          addActive(browsers.options);
+        } else if (e.keyCode == 13) {
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (browsers.options) browsers.options[currentFocus].click();
+          }
+        }
+      };
+      function addActive(x) {
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = x.length - 1;
+        x[currentFocus].classList.add("active");
+      }
+      function removeActive(x) {
+        for (var i = 0; i < x.length; i++) {
+          x[i].classList.remove("active");
+        }
+      }
+    </script>
+  </body>
+</html>

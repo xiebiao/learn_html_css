@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 这里的 white-space:pre 是保留换行和空格 -->
+    <!-- <style style="white-space: pre" contenteditable>
+      html {
+        margin: 0.2em;
+        font-size: 2em;
+        color: lime;
+        background: purple;
+      }
+      head,
+      title,
+      style {
+        display: block;
+      }
+      body {
+        display: none;
+      }
+    </style> -->
+  </head>
+  <body>
+    <input type="hidden" name="edit" contenteditable />
+    <!-- contenteditable 允许用户实时编辑页面元素，用所见即所得的方式调整页面 -->
+    <!-- contenteditable 具有以下几个特点 -->
+    <!-- 1.可以让不可见元素的内容，变为可见且可编辑 -->
+    <!-- 可以用于页面调试？ -->
+    <!-- https://softwareengineering.stackexchange.com/questions/199166/why-does-a-contenteditable-div-not-behave-like-an-input-element -->
+    <div contenteditable="true">
+      <h1>This is title</h1>
+      <p>
+        The purpose of a contenteditable element is to provide WYSIWYG<br />
+        capabilities for editing the content and structure of elements within a
+        Web page.
+      </p>
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+      </ul>
+      <input spellcheck="true" type="text" />
+    </div>
+  </body>
+</html>

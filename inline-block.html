@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .inline-block {
+        display: inline-block;
+        background-color: antiquewhite;
+
+        margin: 10px;
+        height: 200px;
+        width: 100px;
+
+        border: 1px dotted red;
+      }
+      .inline {
+        display: inline;
+        margin: 100px; /*有效*/
+        padding: 100px; /*有效*/
+        width: 100px; /*TIPS:无效*/
+        height: 200px; /*TIPS:无效*/
+
+        background-color: rgb(186, 186, 239);
+      }
+      .normal {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>span</span>
+      <div class="inline-block">
+        div
+      </div>
+      <span>span</span>
+      <div class="inline">div don't has height and width!</div>
+      <span
+        >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit vitae
+        provident exercitationem laudantium molestiae quo blanditiis quidem,
+        porro obcaecati eaque praesentium consequatur consectetur eveniet
+        mollitia nihil perferendis nisi repellat sunt!</span
+      >
+    </div>
+  </body>
+</html>
