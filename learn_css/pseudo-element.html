@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pseudo element</title>
+    <style>
+      .block-element {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+        margin: 50px;
+        padding: 10px;
+        /*文字换行*/
+        white-space: normal;
+        word-break: break-all;
+      }
+      /*块元素的before/after伪元素是*/
+      .block-element::before {
+        /* position: absolute; */
+        content: ":before";
+        width: 50px;
+        height: 50px;
+
+        background-color: brown;
+      }
+      .block-element::after {
+        /* position: absolute; */
+        content: ":after";
+        width: 50px;
+        height: 50px;
+        /* display: block; */
+        /*before/after伪元素默认是inline模式的，所以设置width和height没有作用*/
+        background-color: red;
+      }
+      .inline-element {
+        margin: 10px;
+      }
+      .inline-element::before {
+        content: ":before";
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+      .inline-element::after {
+        content: ":after"; /**/
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block-element">contentXXXXXXXXXX</div>
+    <span class="inline-element">content</span><span>other inline element</span>
+  </body>
+</html>

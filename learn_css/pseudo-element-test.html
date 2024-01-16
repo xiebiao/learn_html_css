@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .nav {
+        width: 200px;
+        margin: 100px auto;
+        /* border: 1px dotted rebeccapurple; */
+      }
+      .sr-only {
+        border: 0;
+        /* clip: rect(0 0 0 0); */
+        height: 1px;
+        /* margin: -1px; */
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      .nav-button {
+        box-sizing: content-box;
+        background-color: none;
+        border: none;
+        padding: 0;
+        /* outline: none; */
+        width: 20px;
+        height: 14px;
+        color: #2e5180;
+        cursor: pointer;
+      }
+      .nav-button::before,
+      .nav-button::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: currentColor;
+        transform: translateY(5px);
+      }
+      .nav-button::before {
+        transform: translateY(-5px);
+        box-shadow: 0 6px currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <button class="nav-button">
+        <span class="sr-only">MENU</span>
+      </button>
+    </div>
+  </body>
+</html>

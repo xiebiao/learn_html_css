@@ -1,0 +1,13 @@
+/* 这里没有指定到具体 layer的样式，默认放到一个匿名layer，而且是在最后一层，优先级最高*/
+/* .mid-width {
+  background-color: aqua;
+  width: 700px;
+
+} */
+@layer first {
+  .mid-width {
+    width: 400px;
+    background-color: red;
+    border: 5px dotted greenyellow;
+  }
+}

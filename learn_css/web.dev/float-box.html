@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container1 {
+        border: 1px solid red;
+      }
+
+      .clear {
+        clear: both;
+      }
+      .float-item {
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+        float: left;
+      }
+
+      .container2 {
+        border: 2px solid red;
+      }
+      .container2::after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+      .left {
+        float: left;
+        background-color: blueviolet;
+        width: 100px;
+        height: 200px;
+      }
+      .right {
+        float: right;
+        background-color: aqua;
+        width: 100px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <div class="float-item"></div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+        aliquam unde quo animi obcaecati odio suscipit, non est, sapiente alias
+        voluptatum neque ea provident perferendis delectus. Laborum magni cumque
+        distinctio? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Deleniti error quae tenetur voluptatum harum? Alias, voluptatem dolorem
+        consectetur, officiis unde accusamus nesciunt recusandae voluptas nulla
+        ea nisi eaque. Itaque,
+        deserunt?紧靠浮动元素的块元素，不会忽略前面元素的位置
+      </div>
+      <!-- 在盒子的最后添加 clear:both的块元素，可以让父元素感知到最后一个元素的存在，同时这个元素由必须感知它前面元素的空间，结果就会让浮动元素的height控制在父级元素内 
+    -->
+      <!-- <div class="clear"></div> -->
+    </div>
+    <div style="margin: 100px"></div>
+    <div class="container2">
+      <div class="left"></div>
+
+      <div class="right"></div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non autem a
+        minima excepturi sapiente. Perferendis velit, adipisci temporibus quo
+        enim repellendus impedit necessitatibus delectus voluptate veritatis
+        omnis laboriosam! Nihil, eligendi.
+      </p>
+      <div style="clear: both"></div>
+    </div>
+  </body>
+</html>

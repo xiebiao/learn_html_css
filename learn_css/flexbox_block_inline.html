@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        border: 1px solid rebeccapurple;
+        flex-direction: row;
+       
+      }
+      .container div {
+        border: 1px dotted red;
+        background-color: antiquewhite;
+        justify-content: space-around;
+        /* flex: 1 1 auto; */
+        
+      }
+      .container div:nth-child(odd) {
+        background-color: aquamarine;
+      }
+      .item {
+        min-block-size: 100px;
+        max-block-size: 500px;
+      }
+      .item-center {
+        /* min-block-size: 100px; */
+        width: 300px;
+        --margin:50px;
+        /* margin-block: var(--margin) auto; */
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item item-center">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>

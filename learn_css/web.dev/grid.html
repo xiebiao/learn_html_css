@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2; /*如果网格内的元素大于列的数量，则会自动换行，这里设置固定的行数就没有意义*/
+      }
+      .item {
+        height: 100px;
+
+        border: 1px solid rebeccapurple;
+      }
+      #item1 {
+        background-color: antiquewhite;
+        grid-column: 2 / span 6;
+        grid-row: 2/3;
+        justify-self: stretch;
+      }
+      .container2 {
+        display: grid;
+        grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+        grid-template-columns: auto 50px auto;
+        grid-template-areas:
+          "header header header"
+          "footer footer footer";
+        column-gap: 5px;
+        row-gap: 3px;
+      
+      }
+      .header {
+        grid-column: 1 / 2;
+
+        background-color: antiquewhite;
+      }
+      .footer {
+        grid-column: 1 / 4;
+        background-color: aqua;
+ 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="item1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, maiores?
+        Eaque esse, totam distinctio repudiandae cum earum repellat nemo.
+        Laudantium illo suscipit possimus vel consequuntur quam nam molestias
+        optio. Consequuntur?
+      </div>
+      <div class="item" id="item2">item2</div>
+      <div class="item" id="item3">item3</div>
+      <div class="item" id="item4">item4</div>
+      <div class="item" id="item5">item5</div>
+      <div class="item" id="item6">item6</div>
+      <div class="item" id="item7">item7</div>
+      <div class="item" id="item8">item8</div>
+    </div>
+    <div class="container2">
+      <div class="header">header</div>
+      <div class="login">login</div>
+      <div class="content">content</div>
+      <div class="content">content</div>
+      <div class="content">content</div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

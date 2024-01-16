@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logical properties</title>
+    <style>
+      .box1 {
+        background-color: gray;
+        display: grid;
+        inline-size: 500px;
+        /* height: 300px; */
+        writing-mode: vertical-rl;
+        /* writing-mode: horizontal-tb; */
+        grid-template-columns: 1fr 1fr 1fr;
+
+        gap: 5px;
+      }
+
+      .box2 {
+        background-color: gray;
+        display: grid;
+        width: 500px;
+        writing-mode: vertical-rl;
+        /* writing-mode: horizontal-tb; */
+        grid-template-columns: 1fr 1fr 1fr;
+
+        gap: 5px;
+      }
+      .item1 {
+        text-align: end;
+      }
+
+      .item {
+        width: 100px;
+        height: 50px;
+        background-color: antiquewhite;
+      }
+      .item2 {
+        text-align:start;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="item item1">item1</div>
+      <div class="item item1">item2</div>
+      <div class="item item1">item3</div>
+      <div class="item item1">item4</div>
+      <div class="item item1">item5</div>
+    </div>
+    <hr />
+    <div class="container2">
+      <div class="box2">
+        <div class="item item2">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item2">item3</div>
+        <div class="item item2">item4</div>
+        <div class="item item2">item5</div>
+      </div>
+    </div>
+  </body>
+</html>

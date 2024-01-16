@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BB Assistant Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght
+@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/bb.png" type="image/png" />
+    <link rel="icon" href="img/bb.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="site">
+          <img src="img/bb.svg" alt="" />
+          <div>
+            <p class="name">BB Assistant Company</p>
+            <p class="desc">Professional Business Support</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#" class="btn">CONTACT US</a></li>
+          </ul>
+        </nav>
+        <button class="nav-button" type="button" onclick="navFunc()">
+          <span class="sr-only">MENU</span>
+        </button>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="headline">
+        <div class="container">
+          <h1>
+            <img src="img/hero.svg" alt="BB Assistant Company" />
+          </h1>
+          <p>Support a Wide Range of Work</p>
+        </div>
+      </div>
+    </section>
+    <section class="message">
+      <div class="container">
+        <h2>
+          20 Years of Experience<br />
+          a Business Assistant
+        </h2>
+        <p>
+          We are professional business assistants and provide services to ensure
+          the smooth running of daily operations. Experts in various fields
+          perform a wide range of office functions, with time management and
+          planning skills. Our customers and business partners will be able to
+          focus on important projects more efficiently.
+        </p>
+      </div>
+    </section>
+    <section class="service">
+      <div class="container">
+        <h2>Assistant Services</h2>
+        <p>Our Skills</p>
+        <div class="features">
+          <article class="feature office">
+            <figure>
+              <img src="img/office.jpg" alt="" />
+            </figure>
+            <h3>Office Operations<br />Support</h3>
+            <p>
+              Such as writing reports, telephone support, responding to emails,
+              scheduling, and digital transformations.
+            </p>
+            <a href="#" class="btn">OFFICE</a>
+          </article>
+          <article class="feature manage">
+            <figure>
+              <img src="img/manage.jpg" alt="" />
+            </figure>
+            <h3>
+              Management<br />
+              Support
+            </h3>
+            <p>
+              According to the project, select and manage team members and
+              assist the leader. They are creative skills to improve the
+              quality.
+            </p>
+            <a href="#" class="btn">MANAGEMENT</a>
+          </article>
+          <article class="feature research">
+            <figure>
+              <img src="img/research.jpg" alt="" />
+            </figure>
+            <h3>
+              Surveys & Research<br />
+              Support
+            </h3>
+            <p>
+              We are offering surveys, research, analysis, planning, consulting,
+              and professional mediation.
+            </p>
+            <a href="#" class="btn">RESEARCH</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div class="container">
+        <div class="text">
+          <h2>Contact Us</h2>
+          <p>
+            If you have any specific concerns,<br />
+            please feel free to contact us.<br />
+            Welcome any comments, suggestions,<br />
+            feedback, questions, or requests you have.
+          </p>
+        </div>
+        <form action="" class="form">
+          <p>
+            <label>
+              <span class="sr-only">Name</span>
+              <input type="text" name="name" placeholder="Name" />
+            </label>
+          </p>
+          <p>
+            <label>
+              <span class="sr-only">Email</span>
+
+              <input type="email" name="email" placeholder="Email"
+            /></label>
+          </p>
+          <p>
+            <label>
+              <span class="sr-only">Message</span>
+              <textarea name="msg" placeholder="Message"></textarea>
+            </label>
+          </p>
+          <p>
+            <input type="submit" class="btn" value="SUBMIT" />
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="info">
+          <div class="site">
+            <img src="img/bb-white.svg" alt="" />
+            <div>
+              <p class="name">BB Assistant Company</p>
+            </div>
+          </div>
+          <p class="add">
+            Carrot Hill 68 Str.<br />
+            15342 Ground Town, North Island<br />
+            +1-800-1234-5678
+          </p>
+        </div>
+        <ul class="sns">
+          <li>
+            <a href="#"><img src="img/logo-twitter.svg" alt="Twitter" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/logo-facebook.svg" alt="Facebook" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/logo-instagram.svg" alt="Instagram" /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      function navFunc() {
+        document.querySelector("html").classList.toggle("open");
+        console.log("toggle open");
+      }
+    </script>
+  </body>
+</html>

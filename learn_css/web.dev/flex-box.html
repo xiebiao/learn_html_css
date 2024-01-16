@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-Box</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        border: 1px solid blue;
+        display: flex;
+        /*控制文本书写方向*/
+        /* direction: rtl; */
+        /*控制flex 元素排列方向*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 200px;
+      }
+      .container2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; /* 元素换行*/
+        height: 200px; /*容器高度*/
+        > div {
+          /*TIPS：嵌套语法保持与源码位置一致*/
+          background-color: antiquewhite;
+        }
+      }
+      .item {
+        border: 1px solid red;
+        width: 100px;
+        height: 50px;
+        /* flex: auto; */
+        text-align: center;
+      }
+      .item2 {
+        border: 1px solid red;
+        height: 100px;
+      }
+      #item1 {
+        /* flex-grow: 10; */
+        /* flex-shrink: 1;
+        flex-basis: auto;*/
+        flex: 3;
+        /*简写： flex: 3 1 auto; */
+      }
+      .container3 {
+        background-color: bisque;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-content: stretch; */
+      }
+      .item3 {
+        width: 100px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="item1">Item1</div>
+      <div class="item" id="item2">Item2</div>
+      <div class="item" id="item3">Item3</div>
+      <div class="item" id="item4">Item4</div>
+    </div>
+    <div class="container2">
+      <div class="item2">Item1</div>
+      <div class="item2">Item2</div>
+      <div class="item2">Item3</div>
+    </div>
+    <div class="container3">
+      <div class="item3" id="item31">Item1</div>
+      <div class="item3" id="item32">Item2</div>
+      <div class="item3" id="item33">Item3</div>
+    </div>
+  </body>
+</html>

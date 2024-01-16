@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 100px;
+      
+        padding: 5px;
+        background-color: antiquewhite;
+    
+
+      }
+
+      p {
+        white-space: wrap;
+        
+        text-overflow: ellipsis;
+        writing-mode: vertical-lr;
+        font-weight: bolder;
+        font-size: 20px;
+      
+        text-orientation:upright;
+      }
+      input {
+        text-overflow: ellipsis; /**/
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
+        laborum, consequatur aliquam molestiae eos quae repellat et voluptatem
+        eveniet. In molestias necessitatibus nihil fugit tenetur, provident
+        atque aliquam enim error.
+      </p>
+    </div>
+  </body>
+</html>

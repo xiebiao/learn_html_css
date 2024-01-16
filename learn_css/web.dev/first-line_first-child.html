@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div:first-line {
+        /*:first-line 的优先级高于 :first-child,为什么？*/
+        color: yellowgreen;
+      }
+      div:first-child {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+        excepturi, enim fugiat aliquam adipisci, nihil alias est eligendi totam
+        quam laudantium non, nemo dolore distinctio quis ex minima consequatur
+        natus.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        border: 1px solid blue;
+      }
+      .container {
+        column-count: 2;
+        margin-top: 200px;
+        border: 1px solid red;
+      }
+
+      .box {
+        height: 50px;
+        width: 50px;
+        float: left;
+      }
+      #box1 {
+        background-color: rgb(199, 230, 77);
+      }
+      #box2 {
+        position: relative;
+        left: 0px;
+        top: 0px;
+      }
+      #box3 {
+        position: absolute;
+        top: 0px;
+
+        background-color: aqua;
+      }
+      #box4 {
+        position: static;
+        background-color: blueviolet;
+      }
+      #box5 {
+        position: fixed;
+        top: 100px;
+
+        background-color: brown;
+      }
+      #box6 {
+        position: sticky;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="border: 1px solid rebeccapurple;">before</div>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus,
+        assumenda quos molestiae inventore vitae quam rerum incidunt veritatis,
+        dolorum molestias neque nesciunt recusandae suscipit quis rem tempora
+        praesentium. Dignissimos, eaque.
+      </p>
+      <div class="box" id="box1">box1</div>
+      <div class="box" id="box2">box2 relative;</div>
+      <div class="box" id="box3">box3 absolute;</div>
+      <div class="box" id="box4">box4 static</div>
+      <div class="box" id="box5">fixed</div>
+      <div class="box" id="box6">box6</div>
+    </div>
+  </body>
+</html>

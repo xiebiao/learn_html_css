@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 690px));
+        gap: 5px;
+      }
+      .grid-item {
+        background-color: aquamarine;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        box-shadow: -1px 0px 0px red;
+      }
+      .grid-item:nth-child(odd) {
+        background-color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/text.jpg" />
+      <img src="images/text.jpg" />
+    </div>
+  </body>
+</html>

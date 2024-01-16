@@ -1,0 +1,17 @@
+@layer first {
+  .mid-width {
+    width: 100px;
+    background-color: rgb(202, 180, 223);
+  }
+}
+@layer second {
+  .mid-width {
+    width: 100px;
+
+    background-color: royalblue;
+    
+  }
+  div.mid-width{
+    background-color: revert-layer;
+  }
+}

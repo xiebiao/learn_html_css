@@ -1,0 +1,547 @@
+/* @charset "UTF-8" */
+/* 使用@media的疑惑: 
+   1.规则中不能使用CSS变量，
+   2.规则散落在多个位置
+*/
+/* Basic */
+
+body {
+  font-family: "Roboto", sans-serif;
+  animation: fade 3s;
+}
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Rest */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.8;
+}
+.container {
+  width: 84%;
+  margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .container {
+    width: 91%;
+    max-width: 1240px;
+  }
+}
+.header {
+  position: relative;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+}
+@media (min-width: 900px) {
+  .header .container {
+    height: 100px;
+  }
+}
+.site {
+  display: flex;
+  align-items: center;
+}
+.site img {
+  width: 42px;
+  margin-right: 10px;
+}
+.site .name {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.site .desc {
+  color: #707f89;
+  font-size: 10px;
+  line-height: 1.2;
+}
+@media (min-width: 900px) {
+  .site img {
+    width: 59px;
+    margin-right: 18px;
+  }
+  .site .name {
+    font-size: 22px;
+  }
+  .site .desc {
+    font-size: 12px;
+  }
+}
+/*---------------------------- nav */
+/*---------------------------- nav button close state*/
+.nav-button {
+  box-sizing: content-box;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+
+  width: 20px;
+  height: 14px;
+  cursor: pointer;
+  color: #2e5180;
+}
+.nav-button::before,
+.nav-button::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: currentColor;
+  transform: translateY(5px);
+
+  transition: 0.3s ease-in-out; /*设置动画延时效果*/
+}
+.nav-button::before {
+  transform: translateY(-5px);
+  box-shadow: 0 6px currentColor;
+}
+/*---------------------------- nav button close state END */
+@media (max-width: 899px) {
+  html.open,
+  .open body {
+    height: 100%;
+    overflow: hidden;
+  }
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 100%; /*太神奇，设置距离左边距100%，实际效果为隐藏当前元素*/
+
+    /* width: 100%; */
+    width: 100vw;
+    height: 100vh; /*高度为设备窗口的高度（不是以内容的高度来计算）*/
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: left 0.5s;
+  }
+  .nav ul {
+    list-style: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  .nav li:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .nav .btn {
+    color: inherit;
+  }
+  /*---------------------------- nav button open state END */
+  .open .nav-button {
+    z-index: 1000;
+    color: #ffffff;
+  }
+
+  .open .nav-button::before {
+    transform: translateY(1px) rotate(45deg);
+    box-shadow: none;
+  }
+  .open .nav-button::after {
+    transform: translateY(-1px) rotate(-45deg);
+  }
+  /*---------------------------- nav button open state END */
+}
+
+@media (min-width: 900px) {
+  .nav-button {
+    display: none;
+  }
+  .nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: #333333;
+  }
+  .nav li:not(:last-child) {
+    margin-right: 23px;
+  }
+  .nav .btn {
+    width: 148px;
+    border-color: #cdd6dd;
+  }
+}
+/*---------------------------- nav END*/
+.hero {
+  height: 400px;
+  background-image: url(img/hero.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+}
+.hero .container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.hero p {
+  font-size: 15px;
+  color: #2e5180;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    height: 700px;
+  }
+  .hero .headline {
+    padding: 47px 0 44px;
+  }
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+}
+
+.hero .headline {
+  flex: auto;
+  align-self: flex-end;
+  padding: 33px 0;
+  background-color: rgba(255, 255, 255, 0.76);
+}
+.hero img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.message {
+  background-color: #2e5180;
+  color: #ffffff;
+  padding: 67px 0;
+}
+.message h2 {
+  margin-bottom: 38px;
+  line-height: 1.62;
+  font-size: 26px;
+  text-align: center;
+}
+.message p {
+  font-size: 15px;
+  line-height: 1.73;
+  max-width: 640px;
+  margin: auto;
+}
+@media (max-width: 374px) {
+  .message h2 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 900px) {
+  message {
+    padding: 81px 0;
+  }
+  .message h2 {
+    font-size: 36px;
+    line-height: 1.33;
+  }
+}
+.service {
+  padding: 67px 0;
+  text-align: center;
+}
+.service h2 {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding-bottom: 9px;
+  border-bottom: dotted 2px currentColor;
+  font-size: 26px;
+  color: #2e5180;
+}
+.service h2 + p {
+  color: #2e5180;
+  font-size: 16px;
+}
+@media (min-width: 900px) {
+  .service {
+    padding: 95px 0 87px;
+  }
+  .service h2 {
+    font-size: 36px;
+  }
+}
+.features {
+  margin-top: 53px;
+  color: #333333;
+}
+.feature:not(:last-child) {
+  margin-bottom: 67px;
+}
+.feature h3 {
+  margin-bottom: 17px;
+  font-size: 22px;
+  line-height: 1.6;
+}
+.feature p {
+  max-width: 264px;
+  margin: 0 auto 25px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.feature figure img {
+  width: 100%;
+
+  /*没理解max-width与width*/
+  height: 246px;
+  object-fit: cover;
+  margin-bottom: 22px;
+  vertical-align: bottom;
+}
+/*
+* 
+*/
+@media (min-width: 900px) {
+  .features {
+    display: flex;
+    margin-top: 75px;
+  }
+  .feature {
+    flex: 1;
+    margin-right: 3.22%;
+  }
+
+  .feature:first-child {
+    margin-left: 3.22%;
+  }
+  /**
+注意：media内的规则如果与外部规则一样，那边位置在后面的那个规则设置生效。
+*/
+  .feature:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .feature h3 {
+    margin-bottom: 26px;
+    font-size: 30px;
+    line-height: 1.4;
+  }
+  .feature p {
+    width: 78%;
+    max-width: none;
+  }
+  .feature figure img {
+    height: 360px;
+    margin-bottom: 33px;
+  }
+  /* 按钮排列*/
+  .feature {
+    display: flex;
+    flex-direction: column;
+  }
+  .feature .btn {
+    margin-top: auto;
+  }
+}
+
+.btn {
+  /* width: 208px; */
+  min-width: 128px; /*可以实现自适应*/
+  width: 20%;
+  display: block;
+  border-radius: 24px;
+  border: solid 2px currentColor;
+  margin: 0 auto;
+  padding: 13px 13px 14px;
+  color: #2e5180;
+
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.contact {
+  padding: 62px 0;
+  background-color: #eef4f8;
+  color: #333333;
+}
+.contact h2 {
+  font-size: 26px;
+  margin-bottom: 42px;
+}
+.contact h2 + p {
+  font-size: 13px;
+  line-height: 2;
+}
+@media (min-width: 900px) {
+  .contact h2 {
+    font-size: 36px;
+  }
+  .contact h2 + p {
+    font-size: 15px;
+    line-height: 1.73;
+  }
+}
+.open .form {
+  display: none;
+}
+.open nav {
+  left: 0;
+}
+.form {
+  margin-top: 46px;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  width: 100%;
+  margin-bottom: 17px;
+  padding: 14px 20px 15px;
+  border: solid 1px #cdd6dd;
+  box-sizing: border-box;
+  border-radius: 0;
+  appearance: none;
+}
+.form textarea {
+  height: 150px;
+}
+.form ::placeholder {
+  color: #cdd6dd;
+}
+.form .btn {
+  width: 100%;
+  /* height: inherit; */
+
+  margin: 0;
+  border: none;
+  background-color: #2e5180;
+  font-family: inherit;
+  color: #ffffff;
+  cursor: pointer;
+  appearance: none;
+}
+@media (min-width: 900px) {
+  .form .btn {
+    width: 272px;
+  }
+  .contact {
+    padding: 0;
+    background: none;
+  }
+  .contact .container {
+    padding: 96px 9% 62px;
+    background-color: #eef4f8;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact h2 {
+    font-size: 36px;
+  }
+  .contact .text {
+    flex: 0 0 auto;
+  }
+  .contact .form {
+    flex: 1 1 auto;
+    max-width: 457px;
+    margin-top: 0;
+    margin-left: 1em;
+  }
+}
+.footer {
+  background-color: #2e5180;
+  padding: 38px 0 56px;
+}
+.footer .site .name {
+  color: #ffffff;
+}
+.footer .site img {
+  width: 47px;
+  margin-right: 14px;
+}
+.footer .site .name {
+  color: #ffffff;
+  font-size: 18px;
+}
+.footer .add {
+  margin: 20px 0 36px 61px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 2;
+}
+.footer .sns {
+  list-style: none;
+  display: flex;
+  margin-left: 61px;
+  align-items: center;
+}
+.footer .sns img {
+  width: 35px;
+  height: 35px;
+}
+
+.footer .sns li:not(:first-child) {
+  margin-left: 25px;
+}
+@media (min-width: 900px) {
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer .site img {
+    width: 59px;
+    margin-right: 18px;
+  }
+  .footer .site .name {
+    font-size: 22px;
+  }
+  .footer .add {
+    margin: 22px 0 0 77px;
+  }
+  .footer .sns {
+    height: 59px;
+    align-items: center;
+  }
+  .contact {
+    position: relative;
+    z-index: 2;
+  }
+  .footer {
+    margin-top: -48px;
+    padding: 105px 0 88px;
+  }
+}

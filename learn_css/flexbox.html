@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap; /*元素是否换行*/
+        flex-direction: row; /*默认值为：row*/
+      }
+      .item {
+        background-color: aquamarine;
+        padding: 10px;
+        /*------------------- flex:1 1 20 ch*/
+        flex-grow: 1;
+        flex-shrink: 1;
+        /*元素主轴方向上的尺寸，
+        flex-basis: 0;则表示元素平分主轴上的空间
+        */
+        flex-basis: 0;
+        /*------------------- flex END */
+
+        margin: 3px;
+        border-radius: 3px;
+        text-align: center;
+      }
+      .item:nth-child(odd) {
+        background-color: antiquewhite;
+      }
+      .footer{
+        display: flex;
+        /*justify-content 用来控制主轴上元素之间的的距离分配*/
+        justify-content: space-around;
+
+      }
+      .footer-item{
+        text-align: center;
+        background-color: azure;
+        height: 100px;
+        /*flex控制元素自身的尺寸*/
+        flex: 1 1 auto;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+        consequuntur perferendis, molestiae tempore voluptatum iure consequatur
+        fuga maiores facilis, sed magnam ad quaerat hic dignissimos eligendi
+        sequi mollitia assumenda nulla.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In aperiam
+        temporibus laborum quas velit, voluptate deserunt eos quisquam optio
+        doloremque, accusamus fugit qui. Omnis porro natus, accusantium facere
+        ducimus repudiandae.
+      </div>
+      <div class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error
+        nisi natus dolorem rerum reiciendis, voluptatem totam.
+      </div>
+      <div class="item">4</div>
+      <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque sit exercitationem iste enim veniam temporibus unde, tempore nostrum dolore saepe harum hic. Exercitationem molestiae dolores cumque blanditiis tenetur distinctio.</div>
+      <div class="item">6</div>
+    </div>
+    <div class="footer">
+      <div class="footer-item footer-left">1</div>
+      <div class="footer-item footer-center">2</div>
+      <div class="footer-item footer-right">3</div>
+    </div>
+  </body>
+</html>
