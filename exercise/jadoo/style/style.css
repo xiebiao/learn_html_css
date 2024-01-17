@@ -1,0 +1,226 @@
+:root {
+    --desktop-max-width: 1440px;
+}
+
+body {
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*-------------------------- base */
+a {
+    text-decoration: none;
+}
+
+/*-------------------------- base END */
+.header-container {
+    width: var(--desktop-max-width);
+    background-image: url("./../images/Ellipse.jpg"), url("./../images/Decore.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 0px left 0px, top -120px right 100px;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 1160px;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 47px;
+
+}
+
+.btn-signup {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #212832;
+    /* padding: 16px; */
+    border-radius: 5px;
+    width: 102px;
+    line-height: 40px;
+}
+
+
+.btn-change-lang {
+    vertical-align: text-bottom;
+}
+
+.btn-arrow {
+    display: inline-block;
+    border-right: 1px solid currentColor;
+    width: 7px;
+    height: 8px;
+    transform: rotate(45deg);
+    margin-left: 8px;
+    vertical-align: sub;
+}
+
+.btn-arrow::after {
+    width: 8px;
+    height: 7px;
+    display: inline-block;
+    content: "";
+    border-top: 1px solid currentColor;
+}
+
+.logo {
+    width: 114.91px;
+}
+
+.menu {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: 100px;
+
+}
+
+.menu li {
+    display: inline;
+    margin-left: 50px;
+    font-family: 'Product Sans', sans-serif;
+    font-size: 17px;
+    list-style: 0;
+    color: #212832;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1155px;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+.hero h1 {
+    color: #181E4B;
+    font-size: 84px;
+    font-family: 'Volkhov', serif;
+    /* text-wrap: nowrap; */
+    margin-top: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------- 突出enjoy字体 */
+.hero h1::first-line {
+
+    background-image: url("./../images/Desc_Heading_Decore.svg");
+    background-repeat: no-repeat;
+    background-position: right -60px bottom 18px;
+    background-size: auto;
+
+}
+
+.hero-title-highlight {
+    padding-right: 70px;
+}
+
+/*-------------- 突出enjoy字体 END */
+.hero h2 {
+    text-transform: uppercase;
+    color: #DF6951;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.hero p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: #5E6282;
+
+}
+
+.hero-traveller-image {
+    background-image: url("./../images/plane.png"), url("./../images/plane.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 70px right -20px, top 50px left 70px;
+    position: relative;
+    margin-left: -200px;
+
+}
+
+.hero-go-more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.hero-go-more button {
+    display: block;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+button.btn-find-out-more {
+
+    line-height: 60px;
+    text-align: center;
+    width: 170px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #F1A501;
+    color: #FFFFFF;
+    font-family: 'Product Sans', sans-serif;
+
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    box-shadow: rgba(241, 165, 1, 0.25) 0px 4px 10px;
+}
+
+
+.btn-play-demo-icon {
+
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+    background-color: #DF6951;
+    box-shadow: rgba(223, 105, 81, 0.25) 0px 20px 20px;
+
+}
+
+span.btn-play-demo-icon::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 9px 0 9px 14px;
+    border-left-color: white;
+    /* z-index: 1000; */
+    top: 18px;
+    left: 22px;
+
+}
+
+span.btn-play-demo-icon::after {
+    display: inline-block;
+    content: "Play Demo";
+    position: relative;
+    left: 50px;
+    width: 120px;
+    color: #181E4B;
+}
