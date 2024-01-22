@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        ::after,
+        ::before {
+            margin: 0;
+            padding: 0;
+        }
+
+        .test {
+            width: 400px;
+            margin: 0 auto;
+            /* z-index: 1000; */
+            /* position: relative; */
+            height: 100px;
+            border: 1px dotted red;
+            margin-top: 100px;
+            background-color:azure;
+        }
+
+        .test::before {
+            content: "::before";
+            display: block;
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            /* top:100px; */
+            position: relative;
+            background-color: aquamarine;
+            /* 可以设置z-index*/
+            /* z-index: -1; */
+
+
+        }
+
+        .test::after {
+            content: "::after";
+            text-align:right;
+            border: 1px solid green;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+            position: relative;
+            top:-50px;
+            left: 50px;
+            /* z-index: -1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+        
+    </div>
+</body>
+
+</html>

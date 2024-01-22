@@ -10,29 +10,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Poppins:wght@500;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
 
 
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
 </head>
 
 <body>
-    <div class="header-container">
-        <nav class="nav-container">
-            <div class="nav">
-                <img class="logo" src="./images/Jadoo.svg" />
-                <ul class="menu">
-                    <li><a href="">Desitnations</a></li>
-                    <li><a href="">Hotels</a></li>
-                    <li><a href="">Flights</a></li>
-                    <li><a href="">Bookings</a></li>
-                    <li><a href="">Login</a></li>
-                    <li><a class="btn-signup" href="">Sign up</a></li>
-                    <li><a href="" class="btn-change-lang">EN<span class="btn-arrow"></span></a></li>
-                </ul>
-            </div>
-        </nav>
-        <header>
+    <header>
+        <div class="header-container">
+            <nav class="nav-container">
+                <div class="nav">
+                    <img class="logo" src="./images/Jadoo.svg" />
+                    <ul class="menu">
+                        <li><a href="">Desitnations</a></li>
+                        <li><a href="">Hotels</a></li>
+                        <li><a href="">Flights</a></li>
+                        <li><a href="">Bookings</a></li>
+                        <li><a href="">Login</a></li>
+                        <li><a class="btn-signup" href="">Sign up</a></li>
+                        <li><a href="" class="btn-change-lang">EN<span class="btn-arrow"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
 
             <div class="hero">
                 <div class="hero-desc">
@@ -43,14 +44,102 @@
                     <p>Built Wicket longer admire do barton vanity itself do in it.<br> Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
 
                     <div class="hero-go-more">
-                        <button class="btn-find-out-more">Find out more</button>
-                        <button class="btn-play-demo">
+                        <a href="#" class="btn-find-out-more">Find out more</a>
+                        <a href="#" class="btn-play-demo">
                             <span class="btn-play-demo-icon"></span>
-                        </button>
+                            <span class="btn-play-demo-txt">Play Demo</span>
+                        </a>
                     </div>
                 </div>
                 <img class="hero-traveller-image" src="./images/Traveller_1.png" width="765px" height="764px" />
             </div>
-        </header>
+
+        </div>
+    </header>
+    <div class="services">
+        <h2 class="h2">category</h2>
+        <h1 class="h1">We offer Best Services</h1>
+        <div class="service-list">
+            <div class="service-card weather-service">
+                <img src="./images/weather.svg">
+                <h3 class="h3">Calculated Weather</h3>
+                <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+            </div>
+            <div class="flights-service card-active">
+
+                <img src="./images/flights.svg">
+                <h3 class="h3">Best Flights</h3>
+                <p>Engrossed listening. Park gate sell they west hard for the.</p>
+
+            </div>
+            <div class="events-service">
+                <img src="./images/events.svg">
+                <h3 class="h3">Local Events</h3>
+                <p>Barton vanity itself do in it. Preferd to men it engrossed listening.</p>
+            </div>
+            <div class="customization-service">
+                <img src="./images/customization.svg">
+                <h3 class="h3">Customization</h3>
+                <p>We deliver outsourced
+                    aviation services for
+                    military customers</p>
+            </div>
+        </div>
     </div>
+
+    <div class="footer">
+        <div class="footer-info">
+            <div class="slogan">
+                <h2 class="company-name">Jadoo.</h2>
+                <p class="company-desc">Book your trip in minute, get full
+                    Control for much longer.</p>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li class="footer-nav-title">Company</li>
+                    <li><a>About</a></li>
+                    <li><a>Careers</a></li>
+                    <li><a>Mobile</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li class="footer-nav-title">Contact</li>
+                    <li><a>About</a></li>
+                    <li><a>Careers</a></li>
+                    <li><a>Mobile</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li class="footer-nav-title">More</li>
+                    <li><a>About</a></li>
+                    <li><a>Careers</a></li>
+                    <li><a>Mobile</a></li>
+                </ul>
+            </div>
+            <div class="outbound">
+                <ul>
+                    <li>facebook</li>
+                    <li>instagrm</li>
+                    <li>twitter</li>
+
+                </ul>
+                <p>Discover our app</p>
+                <ul>
+                    <li>
+                        <button>google play</button>
+
+                    </li>
+                    <li><button>app store</button></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">All rights reserved@jadoo.co</p>
+    </div>
+    <script>
+        let cards = document.getElementsByClassName("service-card");
+
+
+    </script>
 </body>
